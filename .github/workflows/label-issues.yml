@@ -1,0 +1,32 @@
+# Label new issues from their title prefix, so issues filed with `gh` or the API
+# (where reporters cannot set labels) get the same labels as the issue forms.
+name: Label new issues
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  issues: write
+
+jobs:
+  label:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Add area and triage labels
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          NUMBER: ${{ github.event.issue.number }}
+          TITLE: ${{ github.event.issue.title }}
+        run: |
+          shopt -s nocasematch
+          labels="needs-triage"
+          case "$TITLE" in
+            "[Realtime]"*) labels+=",area:realtime" ;;
+            "[Avatar]"*) labels+=",area:avatar" ;;
+            "[TTS]"*) labels+=",area:tts" ;;
+            "[Other]"*) labels+=",area:other" ;;
+            "[Feedback]"*) labels+=",feedback" ;;
+          esac
+          gh issue edit "$NUMBER" --add-label "$labels"

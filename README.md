@@ -52,7 +52,8 @@ curl -fsSL https://raw.githubusercontent.com/boson-ai/Boson-Feedback-Collection/
 
 ## What happens after filing
 
-Every report starts with `needs-triage` and an `area:*` label for its product. The Boson team then updates the labels:
+Every report starts with `needs-triage` and an `area:*` label for its product, set by the form or, for issues filed with `gh`,
+from the title prefix (`[Realtime]`, `[Avatar]`, `[TTS]`, `[Other]`, `[Feedback]`). The Boson team then updates the labels:
 
 | Label | Meaning |
 |---|---|

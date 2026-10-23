@@ -68,7 +68,7 @@ gh issue create -R boson-ai/Boson-Feedback-Collection \
 ```
 
 - `--attach` uploads images and video only and needs a recent `gh`. Zip audio files and other formats, or ask the user to drag them into the issue in the browser after it is created.
-- Skip `--label`: reporters lack permission to set labels, and the Boson team labels new issues.
+- Leave labels to the repo: a workflow labels new issues from the title prefix, and reporters lack permission to set labels.
 - If `gh` is missing or not logged in, ask the user to run `gh auth login`, or give them the title and body to paste at https://github.com/boson-ai/Boson-Feedback-Collection/issues/new/choose.
 
 Done when you have shown the user the new issue URL.
