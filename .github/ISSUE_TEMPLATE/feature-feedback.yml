@@ -1,0 +1,33 @@
+name: Feature request or feedback
+description: Suggest an improvement or share general feedback about a Boson product.
+title: "[Feedback] "
+labels: ["feedback", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Any language or format is fine. **Never paste API keys, tokens, or private data.**
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Product
+      options:
+        - Higgs Realtime
+        - Avatar
+        - TTS
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: feedback
+    attributes:
+      label: Your idea or feedback
+    validations:
+      required: true
+
+  - type: textarea
+    id: use-case
+    attributes:
+      label: What would it help you do?

@@ -1,0 +1,83 @@
+name: Other problem
+description: Report a bug, bad output, or latency issue with another Boson product or API.
+title: "[Other] "
+labels: ["area:other", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Takes about 2 minutes. Any language or format is fine; partial info is better than none.
+        **Never paste API keys, tokens, or private data.**
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Product
+      options:
+        - Higgs Realtime
+        - Avatar
+        - TTS
+        - Other
+      default: 3
+    validations:
+      required: true
+
+  - type: dropdown
+    id: issue-type
+    attributes:
+      label: Issue type
+      options:
+        - Bug
+        - Wrong or poor quality output
+        - Latency or performance
+        - Docs
+        - Feature request
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      options:
+        - Blocker
+        - Major
+        - Minor
+    validations:
+      required: true
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      value: |
+        Summary:
+        Expected:
+        Actual:
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: How to reproduce
+      description: Steps, and a script or code if you have one (any language; wrap code in ```).
+    validations:
+      required: true
+
+  - type: textarea
+    id: details
+    attributes:
+      label: Details (fill what you know)
+      description: Wrap logs in ``` so they stay readable.
+      value: |
+        SDK/API version:
+        Model:
+        Endpoint/region:
+        OS / language:
+        Request IDs + timestamps (with timezone):
+        Logs:
+
+  - type: textarea
+    id: attachments
+    attributes:
+      label: Screenshots or other files
+      description: Drag and drop screenshots, recordings, or files here; zip audio files (.wav/.mp3) first.

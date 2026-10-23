@@ -1,0 +1,29 @@
+# Labels used by the issue forms and triage. Create them before opening the repo to
+# participants: GitHub silently skips form labels that do not exist in the repo.
+- name: area:realtime
+  color: "1d76db"
+  description: Higgs Realtime
+- name: area:avatar
+  color: "5319e7"
+  description: Avatar
+- name: area:tts
+  color: "0e8a16"
+  description: Text-to-speech
+- name: area:other
+  color: "bfdadc"
+  description: Other Boson products or APIs
+- name: feedback
+  color: "a2eeef"
+  description: Feature request or general feedback
+- name: needs-triage
+  color: "fbca04"
+  description: New report, not yet reviewed
+- name: needs-info
+  color: "d93f0b"
+  description: Waiting for more details from the reporter
+- name: confirmed
+  color: "b60205"
+  description: Reproduced by the Boson team
+- name: duplicate
+  color: "cfd3d7"
+  description: Already reported elsewhere
