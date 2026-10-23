@@ -64,11 +64,18 @@ Show the user the title and body, and submit only after they approve.
 ```bash
 gh issue create -R boson-ai/Boson-Feedback-Collection \
   --title "[TTS] Long inputs are cut off" --body-file /path/to/body.md \
-  --attach ./screenshot.png
+  --attach '/abs/path/screenshot.png#Error shown after 20 seconds'
 ```
 
-- `--attach` uploads images and video only and needs a recent `gh`. Zip audio files and other formats, or ask the user to drag them into the issue in the browser after it is created.
-- Leave labels to the repo: a workflow labels new issues from the title prefix, and reporters lack permission to set labels.
-- If `gh` is missing or not logged in, ask the user to run `gh auth login`, or give them the title and body to paste at https://github.com/boson-ai/Boson-Feedback-Collection/issues/new/choose.
+Leave labels to the repo: a workflow labels new issues from the title prefix, and reporters lack permission to set labels.
+If `gh` is missing or not logged in, ask the user to install it from https://cli.github.com/ and run `gh auth login`.
 
-Done when you have shown the user the new issue URL.
+### Attachments
+
+`--attach` uploads images and video (`.png`, `.jpg`, `.gif`, `.mp4`, `.mov`, ...), repeatable, up to 50 files. To place a file inside a section, reference it in the body by absolute path, such as `![Error state](/abs/path/screenshot.png)`, and pass the same path to `--attach`; `gh` swaps in the uploaded URL. Unreferenced attachments are appended to the end of the body.
+
+- **Check support first**: `gh issue create --help | grep -- --attach`. The flag exists from `gh` 2.99.0. Without it, offer the user two options: upgrade `gh`, or file the issue without attachments and drag the files into a comment on the issue in the browser.
+- **Audio and other files** (`.wav`, `.mp3`, logs, archives) cannot go through `--attach`. Ask the user to zip them and drag the zip into a comment on the issue in the browser.
+- **Partial failure**: if some uploads fail, `gh` still creates the issue, prints its URL, and exits non-zero. Keep that issue and never rerun `gh issue create`, which would file a duplicate. Read it back with `gh issue view <number>` and add the missing files with `gh issue comment <number> --attach <file>`.
+
+Done when you have shown the user the new issue URL and every intended attachment appears in it, or the user knows which files to drag in.
