@@ -48,7 +48,7 @@ body:
     id: what-happened
     attributes:
       label: What happened?
-      value: |
+      placeholder: |
         Summary:
         Expected:
         Actual:
@@ -59,7 +59,7 @@ body:
     id: reproduce
     attributes:
       label: How to reproduce
-      description: Steps, and a script or code if you have one (any language; wrap code in ```).
+      description: Steps, plus a script or code if you have one. Any language; formatting is optional.
     validations:
       required: true
 
@@ -67,8 +67,8 @@ body:
     id: details
     attributes:
       label: Details (fill what you know)
-      description: Wrap logs in ``` so they stay readable.
-      value: |
+      description: Paste logs or code as-is; formatting is optional.
+      placeholder: |
         SDK/API version:
         Model:
         Endpoint/region:
