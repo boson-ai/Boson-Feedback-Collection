@@ -23,13 +23,6 @@ and follow it to report the problem I just hit.
 ```
 
 The agent shows you the draft and files it only after you approve.
-To keep the skill installed for Claude Code, save it once:
-
-```bash
-mkdir -p ~/.claude/skills/report-boson-issue
-curl -fsSL https://raw.githubusercontent.com/boson-ai/Boson-Feedback-Collection/main/skills/report-boson-issue/SKILL.md \
-  -o ~/.claude/skills/report-boson-issue/SKILL.md
-```
 
 **AI agents:** to file an issue in this repo, follow [`skills/report-boson-issue/SKILL.md`](skills/report-boson-issue/SKILL.md).
 
