@@ -12,6 +12,27 @@ This repo is public: everything you post here, including attachments, is visible
    screenshots, or recordings. Drag and drop files into the evidence field.
    GitHub does not accept raw audio files, so zip `.wav` / `.mp3` files first.
 
+## Let your AI agent file it
+
+Coding agents such as Claude Code, Codex, or Cursor can collect the details, redact secrets, and file the issue for you.
+You need the [GitHub CLI](https://cli.github.com/) logged in (`gh auth login`). Then tell your agent:
+
+```text
+Read https://raw.githubusercontent.com/boson-ai/Boson-Feedback-Collection/main/skills/report-boson-issue/SKILL.md
+and follow it to report the problem I just hit.
+```
+
+The agent shows you the draft and files it only after you approve.
+To keep the skill installed for Claude Code, save it once:
+
+```bash
+mkdir -p ~/.claude/skills/report-boson-issue
+curl -fsSL https://raw.githubusercontent.com/boson-ai/Boson-Feedback-Collection/main/skills/report-boson-issue/SKILL.md \
+  -o ~/.claude/skills/report-boson-issue/SKILL.md
+```
+
+**AI agents:** to file an issue in this repo, follow [`skills/report-boson-issue/SKILL.md`](skills/report-boson-issue/SKILL.md).
+
 ## What a good report looks like
 
 > **Product:** TTS · **Severity:** Major
