@@ -1,7 +1,7 @@
 # Boson Feedback Collection
 
 Report problems with Boson products during the hackathon: Higgs Realtime, Avatar, TTS, and anything else.
-This repo is private. If you can't open issues here, ask an organizer to add your GitHub account.
+This repo is public: everything you post here, including attachments, is visible to anyone.
 
 ## How to file an issue (about 2 minutes)
 
